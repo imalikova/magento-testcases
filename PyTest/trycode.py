@@ -70,18 +70,22 @@ def click_links(driver, locators_list):
         try:
             driver.find_element_by_css_selector(locator).click()
             driver.implicitly_wait(5)
+            print(driver.current_url)
+            url_list.append(driver.current_url)
             driver.get("https://patriotgaming.com/")
             driver.implicitly_wait(5)
-            url_list.append(driver.current_url)
 
         except:
             print(locator, "not clicked")
+
 
     return url_list
 
 
 def check_links(driver, url_list):
-    print(url_list)
+
+
+    expected_links_list.remove()
 
 
 driver, locators_list = find_links() # saved returned result in function
